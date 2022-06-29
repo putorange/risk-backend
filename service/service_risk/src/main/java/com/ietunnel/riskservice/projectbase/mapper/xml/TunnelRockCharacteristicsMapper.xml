@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ietunnel.riskservice.projectbase.mapper.TunnelRockCharacteristicsMapper">
+
+    <!-- 配置查询结果和java对象之间的映射关系 -->
+<!--    <resultMap id="ResultMap" type="com.ietunnel.riskservice.projectbase.entity.vo.TunnelRockCharacteristicsVO">-->
+<!--        <id property="id" column="id" />-->
+<!--        <result property="tunnel_id" column="tunnelId"/>-->
+<!--        <result property="rockGrade" column="rockGrade"/>-->
+<!--        <result property="tunnelLineName" column="tunnelLineName"/>-->
+<!--        <result property="basicQuality" column="basicQuality"/>-->
+<!--        <result property="qualitativeCharacteristics" column="qualitativeCharacteristics"/>-->
+<!--        <result property="startStation" column="startStation"/>-->
+<!--        <result property="endStation" column="endStation"/>-->
+<!--    </resultMap>-->
+<!--    -->
+    <select id="queryRockGradeById" parameterType="String">
+        SELECT DISTINCT tunnel_rock.rock_grade rockGrade
+        FROM `tunnel_rock_characteristics`,tunnel_rock
+        where tunnel_rock_characteristics.tunnel_id = tunnel_rock.tunnel_id and tunnel_rock_characteristics.id = #{id}
+    </select>
+
+<!--    <select id="queryTunnelLineNameById" parameterType="String" resultType="com.ietunnel.riskservice.projectbase.entity.vo.TunnelRockCharacteristicsVO">-->
+<!--        SELECT DISTINCT tunnel_rock.tunnel_line_name tunnelLineName-->
+<!--        FROM `tunnel_rock_characteristics`,tunnel_rock-->
+<!--        where tunnel_rock_characteristics.tunnel_id = tunnel_rock.tunnel_id-->
+<!--    </select>-->
+
+<!--    <select id="queryBaicQualityById" parameterType="String" resultType="com.ietunnel.riskservice.projectbase.entity.vo.TunnelRockCharacteristicsVO">-->
+<!--        SELECT DISTINCT tunnel_rock.basic_quality basicQuality-->
+<!--        FROM `tunnel_rock_characteristics`,tunnel_rock-->
+<!--        where tunnel_rock_characteristics.tunnel_id = tunnel_rock.tunnel_id-->
+<!--    </select>-->
+
+<!--    <select id="queryQualitativeCharacteristicsById" parameterType="String" resultType="com.ietunnel.riskservice.projectbase.entity.vo.TunnelRockCharacteristicsVO">-->
+<!--        SELECT DISTINCT tunnel_rock.qualitative_characteristics qualitativeCharacteristics-->
+<!--        FROM `tunnel_rock_characteristics`,tunnel_rock-->
+<!--        where tunnel_rock_characteristics.tunnel_id = tunnel_rock.tunnel_id-->
+<!--    </select>-->
+
+<!--    <select id="queryStartStationById" parameterType="String" resultType="com.ietunnel.riskservice.projectbase.entity.vo.TunnelRockCharacteristicsVO">-->
+<!--        SELECT DISTINCT tunnel_rock.start_station startStation-->
+<!--        FROM `tunnel_rock_characteristics`,section-->
+<!--        where tunnel_rock_characteristics.tunnel_id = section.tunnel_id-->
+<!--    </select>-->
+
+<!--    <select id="queryEndStationById" parameterType="String" resultType="com.ietunnel.riskservice.projectbase.entity.vo.TunnelRockCharacteristicsVO">-->
+<!--        SELECT DISTINCT tunnel_rock.end_station endStation-->
+<!--        FROM `tunnel_rock_characteristics`,section-->
+<!--        where tunnel_rock_characteristics.tunnel_id = section.tunnel_id-->
+<!--    </select>-->
+
+
+</mapper>
